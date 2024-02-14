@@ -1,0 +1,236 @@
+/* :root {
+    --background-color: #9e9a94;
+    --border-color: #000;
+    --content-color: #f2f1f0;
+    --text-color: #515151;
+    --accent-color: #e48312;
+  } */
+
+:root {
+    --background-color: #ffa776;
+    --border-color: #000;
+    --content-color: #fffaf0;
+    --text-color: #000;
+    --accent-color: black;
+}
+
+body {
+    /* background: var(--background-color); */
+    background-color: var(--background-color);
+    background-image: url(images/orangedot.webp);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    /* background-image: linear-gradient(var(--background-color) 0%, #a44b00 100%); */
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; */
+    font-family: 'Mulish', Tahoma, Geneva, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+#background1 {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0vw;
+    left: 0vw;
+    z-index: 1;
+    background-image: url(images/dots.svg);
+    background-repeat: repeat;
+    background-size: 30vw;
+}
+
+#background2 {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 5vw;
+    left: 5vw;
+    z-index: 1;
+    background-image: url(images/dots.svg);
+    background-repeat: repeat;
+    background-size: 10vw;
+}
+
+#container {
+    max-width: 65rem;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+#sidebar {
+    position: relative;
+    width: 7rem;
+    margin-right: 1.5rem;
+    /* z-index: 4; */
+}
+
+nav {
+    position: fixed;
+    height: 100%;
+    /* overflow-x: hidden; */
+    user-select: none;
+}
+
+#mainColumn {
+    flex: 6;
+    position: relative;
+    z-index: 2;
+}
+
+#logo {
+    width: 7rem;
+}
+
+.above {
+    z-index: 3;
+    background-color: var(--content-color);
+    position: fixed;
+    margin-top: 4.8rem;
+    margin-left: -.5rem;
+}
+
+.below {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--border-color);
+    top: 4.6rem;
+    right: -2rem;
+}
+
+.speech:before,
+.speech:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+}
+
+.above,
+.above:before,
+.above:after {
+    width: 1rem;
+    height: 1rem;
+    border-top-right-radius: 10%;
+}
+
+.below,
+.below:before,
+.below:after {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-top-right-radius: 20%;
+}
+
+.speech {
+    transform: rotate(-30deg) skewX(-30deg) scale(1, .866);
+}
+
+.speech:before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+}
+
+.speech:after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+}
+
+main {
+    position: relative;
+    background: var(--content-color);
+    border: .25rem solid var(--border-color);
+    margin-top: 0;
+    border-radius: 1rem;
+    padding: 1rem 5rem;
+}
+
+article {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+p {
+    line-height: 150%;
+    color: var(--text-color);
+    font-weight: 400;
+    margin: 0;
+}
+
+footer p {
+    margin: .5em 0;
+    color: #ba734d;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--accent-color);
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-weight: 800;
+    margin-block-start: .83em;
+    margin-block-end: .83em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 1024px) {
+    #container {
+        display: block;
+        padding: 0;
+    }
+
+    .speech {
+        display: none;
+    }
+
+    #sidebar {
+        width: 100%;
+        z-index: 4;
+        position: relative;
+        margin-right: 0;
+    }
+
+    nav {
+        height: 8rem;
+        margin-top: 1rem;
+    }
+
+    #logo {
+        display: block;
+        margin-left: 1.5rem;
+        width: auto;
+        height: 4rem;
+    }
+
+    #mainColumn {
+        margin: .5rem;
+    }
+
+    main {
+        padding: 1rem 2rem 1rem 5rem;
+    }
+
+    article {
+        font-size: 1.25rem;
+    }
+}
